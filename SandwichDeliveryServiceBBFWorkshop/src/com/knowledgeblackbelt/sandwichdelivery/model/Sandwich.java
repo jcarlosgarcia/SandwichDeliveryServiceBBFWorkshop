@@ -6,12 +6,12 @@ import java.util.List;
 public class Sandwich {
 	
 	private String name;
-	private long price;
+	private double price;
 	
 	private Worker owner;
 	private List<Supplement> supplements = new ArrayList<Supplement>();
 	
-	public Sandwich(String name, long price) {
+	public Sandwich(String name, double price) {
 		this.name = name;
 		this.price = price;
 	}
@@ -24,11 +24,11 @@ public class Sandwich {
 		this.name = name;
 	}
 	
-	public long getPrice() {
+	public double getPrice() {
 		return price;
 	}
 	
-	public void setPrice(long price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 	
