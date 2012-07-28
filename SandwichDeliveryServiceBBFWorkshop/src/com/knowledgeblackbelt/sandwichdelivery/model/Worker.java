@@ -28,11 +28,11 @@ public class Worker {
 	public void purchase(Sandwich sandwich) {
 		
 		if (sandwich.getOwner() != null) {
-			System.out.println("Cannot buy such sandwich. It has already an owner");
+			System.out.println("Cannot buy such sandwich: " + sandwich + ". It has already an owner: " + sandwich.getOwner());
 		}
 		
 		if (sandwich.getPrice() > this.getMoney()) {
-			System.out.println("Cannot buy such sandwich. Worker hasn't got enough money: " + this);
+			System.out.println("Cannot buy such sandwich: " + sandwich + ". Worker hasn't got enough money: " + this);
 		
 		} else {
 			this.setMoney(this.getMoney() - sandwich.getPrice());
@@ -45,4 +45,15 @@ public class Worker {
 	public String toString() {
 		return name + " (" + money + ")";
 	}
+	
+	public void listSandwiches() {
+		
+		System.out.println("Snadwiches owned by " + this);
+		
+		for (Sandwich sandwich : this.getSandwiches()) {
+			System.out.println(sandwich);
+		}
+		
+	}
+	
 }
